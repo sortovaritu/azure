@@ -54,7 +54,7 @@
         "storageAccountType": "Standard_LRS",
         "vmStorageAccountContainerName": "vhds",
         "vmName": "MyWindowsVM",
-        "vmSize": "Standard_D1",
+        "vmSize": "Standard_D2",
         "virtualNetworkName": "uclab",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef1": "[concat(variables('vnetID'),'/subnets/',variables('subnetName1'))]",
