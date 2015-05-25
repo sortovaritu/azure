@@ -177,12 +177,9 @@
                     }
                 },
                 "networkProfile": {
-                    "networkInterfaces": [
-                        {
-                            "Primary": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]",
-                        },                     
+                    "networkInterfaces": [                 
 			{
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName2'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]"
                         }
                     ]
                 }
