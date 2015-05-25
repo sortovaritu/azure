@@ -126,6 +126,7 @@
             "location": "[variables('location')]",
             "dependsOn": [
                 "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+	    ],
             "properties": {
                 "ipConfigurations": [
                     {
