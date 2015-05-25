@@ -145,7 +145,8 @@
             "location": "[variables('location')]",
             "dependsOn": [
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('newStorageAccountName'))]",
-                "[concat('Microsoft.Network/networkInterfaces/', variables('nicName1'))]"
+                "[concat('Microsoft.Network/networkInterfaces/', variables('nicName1'))]",
+		"[concat('Microsoft.Network/networkInterfaces/', variables('nicName2'))]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -176,6 +177,9 @@
                     "networkInterfaces": [
                         {
                             "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]"
+                        },                     
+			{
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName2'))]"
                         }
                     ]
                 }
