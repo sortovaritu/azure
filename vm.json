@@ -179,8 +179,8 @@
                 "networkProfile": {
                     "networkInterfaces": [                 
 			{
-			    "Primary": null,
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]",
+			    "Primary": null
                         },
 			{
                             "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName2'))]"
