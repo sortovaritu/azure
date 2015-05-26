@@ -51,6 +51,8 @@
 	"nicName2": "VMNic2",
 	"subnetName2": "dmz",
 	"subnetPrefix2": "10.0.0.64/26",
+	"publicIPAddressName": "edgePub",
+	"publicIPAddressType": "Dynamic",
         "storageAccountType": "Standard_LRS",
         "vmStorageAccountContainerName": "vhds",
         "vmName": "[parameters('newStorageAccountName')]",
@@ -70,6 +72,18 @@
                 "accountType": "[variables('storageAccountType')]"
             }
         },
+    {
+        "apiVersion": "2015-05-01-preview",
+        "type": "Microsoft.Network/publicIPAddresses",
+        "name": "[variables('publicIPAddressName')]",
+        "location": "[variables('location')]",
+        "properties": {
+            "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+            "dnsSettings": {
+                "domainNameLabel": "[parameters('dnsNameForPublicIP')]"
+            }
+        }
+    },
         {
             "apiVersion": "2015-05-01-preview",
             "type": "Microsoft.Network/virtualNetworks",
@@ -133,6 +147,9 @@
                         "name": "ipconfig2",
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
+			    "publicIPAddress": {
+                            	"id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
+                        	},
                             "subnet": {
                                 "id": "[variables('subnetRef2')]"
                             }
