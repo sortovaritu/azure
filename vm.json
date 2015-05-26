@@ -53,7 +53,7 @@
 	"subnetPrefix2": "10.0.0.64/26",
         "storageAccountType": "Standard_LRS",
         "vmStorageAccountContainerName": "vhds",
-        "vmName": "MyWindowsVM",
+        "vmName": "edge1",
         "vmSize": "Standard_D2",
         "virtualNetworkName": "uclab",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
@@ -180,12 +180,12 @@
                     "networkInterfaces": [                 
 			{
 			          "properties": {
-            "primary": false         },
+            "primary": true         },
                             "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName1'))]",
                         },
 			{
 			          "properties": {
-            "primary": true         },
+            "primary": false         },
                             "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName2'))]",
                         }
                     ]
