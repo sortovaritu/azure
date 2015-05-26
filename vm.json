@@ -124,7 +124,7 @@
                     {
                         "name": "ipconfig1",
                         "properties": {
-                            "privateIPAllocationMethod": "Dynamic",
+                            "privateIPAllocationMethod": "Static",
                             "subnet": {
                                 "id": "[variables('subnetRef1')]"
                             }
@@ -146,10 +146,7 @@
                     {
                         "name": "ipconfig2",
                         "properties": {
-                            "privateIPAllocationMethod": "Dynamic",
-			    "publicIPAddress": {
-                            	"id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
-                        	},
+                            "privateIPAllocationMethod": "Static",
                             "subnet": {
                                 "id": "[variables('subnetRef2')]"
                             }
